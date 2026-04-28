@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eaton Embroidery — professional embroidered workwear, uniforms and personalised garments for businesses, schools and sports clubs across the UK. We supply the garments and the embroidery.">
+  <meta name="keywords" content="embroidery workwear, embroidered uniforms, school uniforms embroidery, sports club workwear, personalised embroidery, Leicestershire embroidery">
+  <title>Eaton Embroidery — Garments + Embroidery + Delivered</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #ffffff;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ─── CSS VARIABLES ─────────────────────────────────────────── */
+    :root {
+      --green-50:  #E1F5EE;
+      --green-100: #9FE1CB;
+      --green-400: #1D9E75;
+      --green-600: #0F6E56;
+      --green-800: #085041;
+      --green-900: #04342C;
+      --off-white: #F8F7F4;
+      --border:    rgba(0,0,0,0.1);
+      --text:      #1a1a1a;
+      --muted:     #6b6b6b;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow:    0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.04);
+    }
+
+    /* ─── UTILITIES ─────────────────────────────────────────────── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .section-eyebrow {
+      font-size: 11px; font-weight: 500; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--green-400); margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700; line-height: 1.15; color: var(--text);
+    }
+    .section-sub {
+      font-size: 16px; color: var(--muted); line-height: 1.7;
+      max-width: 560px; margin-top: 12px;
+    }
+    .btn-primary {
+      display: inline-block; background: var(--green-400); color: #fff;
+      padding: 13px 26px; border-radius: var(--radius-sm); font-size: 14px;
+      font-weight: 500; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--green-600); transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-block; background: transparent; color: var(--text);
+      padding: 13px 26px; border-radius: var(--radius-sm); font-size: 14px;
+      font-weight: 400; border: 1.5px solid var(--border); cursor: pointer;
+      font-family: 'DM Sans', sans-serif; transition: border-color 0.2s, transform 0.15s;
+    }
+    .btn-outline:hover { border-color: var(--green-400); color: var(--green-400); transform: translateY(-1px); }
+
+    /* ─── FADE-IN ANIMATION ─────────────────────────────────────── */
+    .fade-in {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── NAV ───────────────────────────────────────────────────── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 24px; max-width: 1100px; margin: 0 auto;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700;
+    }
+    .nav-logo span { color: var(--green-400); }
+    .nav-links {
+      display: flex; gap: 28px; align-items: center;
+    }
+    .nav-links a {
+      font-size: 14px; color: var(--muted); font-weight: 400;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { margin-left: 12px; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text); border-radius: 2px; transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none; flex-direction: column; gap: 4px;
+      padding: 12px 24px 20px; border-top: 1px solid var(--border);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 15px; padding: 10px 0; color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu .btn-primary { margin-top: 10px; text-align: center; }
+
+    /* ─── HERO ──────────────────────────────────────────────────── */
+    .hero {
+      padding: 80px 0 72px;
+      background: #fff;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -60px; right: -80px;
+      width: 500px; height: 500px;
+      background: var(--green-50);
+      border-radius: 50%; opacity: 0.5; pointer-events: none;
+    }
+    .hero-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center; position: relative;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green-50); color: var(--green-600);
+      font-size: 12px; font-weight: 500; padding: 6px 14px;
+      border-radius: 20px; margin-bottom: 20px;
+      border: 1px solid var(--green-100);
+    }
+    .hero-eyebrow::before {
+      content: ''; width: 6px; height: 6px;
+      background: var(--green-400); border-radius: 50%;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 700; line-height: 1.1;
+      color: var(--text); margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: italic; color: var(--green-400); }
+    .hero-sub {
+      font-size: 17px; color: var(--muted); line-height: 1.7;
+      margin-bottom: 32px; max-width: 480px;
+    }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-image-box {
+      background: var(--green-50);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--green-100);
+      aspect-ratio: 4/3;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 12px; position: relative; overflow: hidden;
+    }
+    /* ── REPLACE THIS BLOCK when you have a hero photo ── */
+    /* Delete the .hero-image-placeholder styles and replace
+       the <div class="hero-image-box"> with:
+       <img src="images/hero-workwear.jpg" alt="Embroidered workwear" class="hero-img"> */
+    .hero-image-placeholder {
+      text-align: center; padding: 32px;
+    }
+    .hero-garment-svg { margin: 0 auto 12px; }
+    .hero-image-placeholder p {
+      font-size: 13px; color: var(--green-600); font-weight: 500;
+    }
+    .hero-image-placeholder small {
+      font-size: 11px; color: var(--green-400); margin-top: 4px; display: block;
+    }
+    .hero-img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg); }
+    /* ── END placeholder block ── */
+
+    .hero-badges {
+      display: flex; gap: 8px; margin-top: 24px; flex-wrap: wrap;
+    }
+    .hero-badge {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 20px; padding: 5px 12px;
+      font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 6px;
+    }
+    .hero-badge::before {
+      content: '✓'; color: var(--green-400); font-weight: 700; font-size: 11px;
+    }
+
+    /* ─── USP BAR ───────────────────────────────────────────────── */
+    .usp-bar {
+      background: var(--green-900); padding: 28px 0;
+    }
+    .usp-bar-inner {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .usp-item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 0 32px; border-right: 1px solid rgba(255,255,255,0.12);
+    }
+    .usp-item:last-child { border-right: none; }
+    .usp-icon {
+      width: 40px; height: 40px; border-radius: 8px;
+      background: rgba(255,255,255,0.1); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .usp-icon svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .usp-text h3 { font-size: 14px; font-weight: 500; color: #fff; margin-bottom: 2px; }
+    .usp-text p { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.4; }
+
+    /* ─── SERVICES ──────────────────────────────────────────────── */
+    .services { padding: 88px 0; background: var(--off-white); }
+    .services-header { margin-bottom: 48px; }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+    }
+    .service-card {
+      background: #fff; border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 28px 28px 24px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: var(--shadow);
+    }
+    .service-card:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+    .service-card.featured {
+      background: var(--green-900); border-color: var(--green-800);
+    }
+    .service-card.featured .service-card-title { color: #fff; }
+    .service-card.featured .service-card-body { color: rgba(255,255,255,0.7); }
+    .service-icon {
+      width: 48px; height: 48px; border-radius: 10px;
+      background: var(--green-50); display: flex; align-items: center;
+      justify-content: center; margin-bottom: 18px;
+    }
+    .service-card.featured .service-icon { background: rgba(255,255,255,0.1); }
+    .service-icon svg { width: 24px; height: 24px; stroke: var(--green-400); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .service-card.featured .service-icon svg { stroke: #fff; }
+    .service-card-title { font-size: 18px; font-weight: 500; margin-bottom: 8px; color: var(--text); }
+    .service-card-body { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    .service-tag {
+      display: inline-block; margin-top: 16px;
+      background: var(--green-50); color: var(--green-600);
+      font-size: 11px; font-weight: 500; padding: 4px 10px;
+      border-radius: 20px; border: 1px solid var(--green-100);
+    }
+    .service-card.featured .service-tag {
+      background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.2);
+    }
+
+    /* ─── HOW IT WORKS ──────────────────────────────────────────── */
+    .process { padding: 88px 0; background: #fff; }
+    .process-header { margin-bottom: 56px; }
+    .process-steps {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute; top: 20px; left: 10%; right: 10%;
+      height: 1px; background: var(--green-100); z-index: 0;
+    }
+    .process-step { text-align: center; position: relative; z-index: 1; }
+    .process-step-num {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--green-400); color: #fff;
+      font-size: 15px; font-weight: 500;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px; border: 3px solid #fff;
+      box-shadow: 0 0 0 1px var(--green-100);
+    }
+    .process-step h3 { font-size: 15px; font-weight: 500; margin-bottom: 6px; }
+    .process-step p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    /* ─── PRICING ───────────────────────────────────────────────── */
+    .pricing { padding: 88px 0; background: var(--off-white); }
+    .pricing-header { margin-bottom: 48px; }
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .pricing-card {
+      background: #fff; border-radius: var(--radius-lg);
+      border: 1px solid var(--border); padding: 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .pricing-card.popular {
+      border: 2px solid var(--green-400);
+    }
+    .popular-badge {
+      position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+      background: var(--green-400); color: #fff;
+      font-size: 11px; font-weight: 500;
+      padding: 4px 14px; border-radius: 20px; white-space: nowrap;
+    }
+    .pricing-category {
+      font-size: 11px; font-weight: 500; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+    }
+    .pricing-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px; font-weight: 700; color: var(--text);
+      line-height: 1; margin-bottom: 6px;
+    }
+    .pricing-amount small { font-size: 16px; font-family: 'DM Sans', sans-serif; font-weight: 400; color: var(--muted); }
+    .pricing-desc { font-size: 13px; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
+    .pricing-divider { height: 1px; background: var(--border); margin-bottom: 18px; }
+    .pricing-features li {
+      font-size: 13px; color: var(--muted); padding: 5px 0;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .pricing-features li::before {
+      content: ''; width: 16px; height: 16px; border-radius: 50%;
+      background: var(--green-50); border: 1px solid var(--green-100);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 10px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8l3.5 3.5L13 5' stroke='%231D9E75' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+    }
+    .pricing-note {
+      margin-top: 32px; background: var(--green-50); border: 1px solid var(--green-100);
+      border-radius: var(--radius-md); padding: 18px 22px;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .pricing-note-icon { font-size: 20px; flex-shrink: 0; }
+    .pricing-note p { font-size: 13px; color: var(--green-600); line-height: 1.6; }
+    .pricing-note strong { color: var(--green-800); }
+
+    /* ─── GALLERY ───────────────────────────────────────────────── */
+    .gallery { padding: 88px 0; background: #fff; }
+    .gallery-header { margin-bottom: 48px; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      gap: 16px;
+    }
+    .gallery-item {
+      border-radius: var(--radius-md); overflow: hidden;
+      background: var(--green-50); border: 1px solid var(--green-100);
+      aspect-ratio: 4/3;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .gallery-item.tall { grid-row: span 2; aspect-ratio: auto; min-height: 340px; }
+    /* ── GALLERY PLACEHOLDER STYLES ──
+       When you have real photos, replace the .gallery-placeholder div inside each
+       .gallery-item with: <img src="images/your-photo.jpg" alt="description">
+       and add style="width:100%;height:100%;object-fit:cover;" to the img tag      ── */
+    .gallery-placeholder {
+      text-align: center; padding: 24px;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .gallery-placeholder-icon {
+      width: 40px; height: 40px; border-radius: 8px;
+      background: var(--green-100); display: flex; align-items: center; justify-content: center;
+    }
+    .gallery-placeholder-icon svg { width: 20px; height: 20px; stroke: var(--green-600); fill: none; stroke-width: 1.8; }
+    .gallery-placeholder p { font-size: 12px; color: var(--green-600); font-weight: 500; }
+    .gallery-placeholder small { font-size: 11px; color: var(--green-400); font-family: monospace; }
+    .gallery-overlay {
+      position: absolute; inset: 0; background: rgba(4,52,44,0.7);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.2s;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay span {
+      color: #fff; font-size: 13px; font-weight: 500;
+    }
+
+    /* ─── WHO WE WORK WITH ──────────────────────────────────────── */
+    .sectors { padding: 88px 0; background: var(--off-white); }
+    .sectors-header { margin-bottom: 40px; }
+    .sectors-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+    }
+    .sector-card {
+      background: #fff; border-radius: var(--radius-md);
+      border: 1px solid var(--border); padding: 20px 22px;
+      display: flex; align-items: center; gap: 14px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .sector-card:hover { transform: translateY(-2px); border-color: var(--green-100); }
+    .sector-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: var(--green-50); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .sector-icon svg { width: 18px; height: 18px; stroke: var(--green-400); fill: none; stroke-width: 1.8; stroke-linecap: round; }
+    .sector-text h4 { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
+    .sector-text p { font-size: 12px; color: var(--muted); }
+
+    /* ─── QUOTE FORM ────────────────────────────────────────────── */
+    .quote-section { padding: 88px 0; background: #fff; }
+    .quote-inner {
+      display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: start;
+    }
+    .quote-left h2 { margin-bottom: 14px; }
+    .quote-left .section-sub { margin-bottom: 28px; }
+    .quote-detail {
+      display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px;
+    }
+    .quote-detail-item { display: flex; gap: 12px; align-items: flex-start; }
+    .quote-detail-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--green-400); flex-shrink: 0; margin-top: 8px;
+    }
+    .quote-detail-item p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+    .quote-detail-item strong { color: var(--text); }
+    .form-card {
+      background: var(--off-white); border-radius: var(--radius-lg);
+      border: 1px solid var(--border); padding: 32px; box-shadow: var(--shadow);
+    }
+    .form-title { font-size: 16px; font-weight: 500; margin-bottom: 22px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    .form-row.full { grid-template-columns: 1fr; }
+    .form-field { display: flex; flex-direction: column; gap: 5px; }
+    .form-label { font-size: 12px; font-weight: 500; color: var(--muted); }
+    .form-label .req { color: var(--green-400); margin-left: 2px; }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      font-family: 'DM Sans', sans-serif; font-size: 14px;
+      padding: 10px 14px; border: 1px solid rgba(0,0,0,0.15);
+      border-radius: var(--radius-sm); background: #fff; color: var(--text);
+      outline: none; transition: border-color 0.2s, box-shadow 0.2s; width: 100%;
+      appearance: none;
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--green-400);
+      box-shadow: 0 0 0 3px rgba(29,158,117,0.12);
+    }
+    .form-field textarea { resize: vertical; min-height: 90px; }
+    .form-consent {
+      display: flex; align-items: flex-start; gap: 10px;
+      margin: 16px 0 20px;
+    }
+    .form-consent input[type="checkbox"] {
+      accent-color: var(--green-400); width: 16px; height: 16px;
+      flex-shrink: 0; margin-top: 3px;
+    }
+    .form-consent label { font-size: 12px; color: var(--muted); line-height: 1.6; }
+    .form-submit-note { font-size: 11px; color: var(--muted); margin-top: 10px; }
+
+    /* Tally embed placeholder */
+    .tally-placeholder {
+      background: var(--green-50); border: 1px dashed var(--green-100);
+      border-radius: var(--radius-md); padding: 24px; text-align: center;
+      margin-bottom: 14px;
+    }
+    .tally-placeholder p { font-size: 13px; color: var(--green-600); font-weight: 500; }
+    .tally-placeholder small { font-size: 11px; color: var(--green-400); display: block; margin-top: 4px; font-family: monospace; }
+
+    /* ─── FOOTER ────────────────────────────────────────────────── */
+    footer {
+      background: var(--green-900); color: rgba(255,255,255,0.7); padding: 48px 0 28px;
+    }
+    .footer-inner {
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px;
+    }
+    .footer-brand .nav-logo { color: #fff; margin-bottom: 12px; }
+    .footer-brand .nav-logo span { color: var(--green-100); }
+    .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 280px; }
+    .footer-col h4 {
+      font-size: 12px; font-weight: 500; letter-spacing: 1.5px;
+      text-transform: uppercase; color: rgba(255,255,255,0.4);
+      margin-bottom: 14px;
+    }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { font-size: 13px; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 10px;
+    }
+    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.35); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-image-box { max-width: 480px; }
+      .usp-bar-inner { grid-template-columns: 1fr; }
+      .usp-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); padding: 16px 24px; }
+      .usp-item:last-child { border-bottom: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .process-steps::before { display: none; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item.tall { grid-row: span 1; }
+      .sectors-grid { grid-template-columns: 1fr 1fr; }
+      .quote-inner { grid-template-columns: 1fr; gap: 40px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: span 2; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 560px) {
+      .hero h1 { font-size: 34px; }
+      .process-steps { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .sectors-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-brand { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─────────────────────────────────────────────────── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Eaton <span>Embroidery</span></a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#process">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#quote" class="btn-primary nav-cta">Get a quote</a>
+      </div>
+      <button class="hamburger" aria-label="Menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#services" onclick="toggleMenu()">Services</a>
+      <a href="#process" onclick="toggleMenu()">How it works</a>
+      <a href="#pricing" onclick="toggleMenu()">Pricing</a>
+      <a href="#gallery" onclick="toggleMenu()">Gallery</a>
+      <a href="#quote" class="btn-primary" onclick="toggleMenu()">Get a free quote</a>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="fade-in">
+          <div class="hero-eyebrow">Full-package workwear provider</div>
+          <h1>Your logo.<br><em>Your garment.</em><br>Delivered.</h1>
+          <p class="hero-sub">Eaton Embroidery supplies the garment <em>and</em> the embroidery — one supplier, one quote, one delivery. No sourcing headaches for businesses, schools or clubs.</p>
+          <div class="hero-btns">
+            <a href="#quote" class="btn-primary">Get a free quote</a>
+            <a href="#gallery" class="btn-outline">See our work</a>
+          </div>
+          <div class="hero-badges">
+            <span class="hero-badge">From £3 per item</span>
+            <span class="hero-badge">We supply garments</span>
+            <span class="hero-badge">Response within 24hrs</span>
+          </div>
+        </div>
+        <div class="fade-in" style="transition-delay:0.15s;">
+          <div class="hero-image-box">
+            <!-- ── REPLACE WITH YOUR HERO PHOTO ──────────────────
+                 When you have a photo, delete the .hero-image-placeholder div below
+                 and replace with:
+                 <img src="images/hero-workwear.jpg" alt="Embroidered workwear" class="hero-img">
+                 ─────────────────────────────────────────────────── -->
+            <div class="hero-image-placeholder">
+              <svg class="hero-garment-svg" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="80" height="80" rx="14" fill="#9FE1CB"/>
+                <path d="M20 30 Q20 23 27 23 L33 23 Q35 18 40 18 Q45 18 47 23 L53 23 Q60 23 60 30 L60 60 Q60 64 56 64 L24 64 Q20 64 20 60 Z" fill="#1D9E75"/>
+                <path d="M33 23 Q35 18 40 18 Q45 18 47 23" fill="none" stroke="#085041" stroke-width="1.5"/>
+                <path d="M31 40 Q36 36 40 38 Q44 40 49 36" stroke="#E1F5EE" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <path d="M33 47 Q37 44 40 45 Q43 46 47 44" stroke="#E1F5EE" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <circle cx="40" cy="54" r="2" fill="#E1F5EE" opacity="0.6"/>
+              </svg>
+              <p>Your photo goes here</p>
+              <small>images/hero-workwear.jpg</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── USP BAR ──────────────────────────────────────────────── -->
+  <div class="usp-bar">
+    <div class="container">
+      <div class="usp-bar-inner">
+        <div class="usp-item">
+          <div class="usp-icon">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div class="usp-text">
+            <h3>We supply everything</h3>
+            <p>Garments sourced and embroidered — one order, one supplier</p>
+          </div>
+        </div>
+        <div class="usp-item">
+          <div class="usp-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="usp-text">
+            <h3>Quote within 24 hours</h3>
+            <p>Send us your requirements and we'll get back to you fast</p>
+          </div>
+        </div>
+        <div class="usp-item">
+          <div class="usp-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div class="usp-text">
+            <h3>No minimum on some orders</h3>
+            <p>Small personalised orders to large corporate contracts</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SERVICES ─────────────────────────────────────────────── -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-header fade-in">
+        <p class="section-eyebrow">What we do</p>
+        <h2 class="section-title">One supplier.<br>Everything covered.</h2>
+        <p class="section-sub">Unlike embroidery-only services, we handle the complete package — saving you time and eliminating the hassle of sourcing garments separately.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card featured fade-in">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h3 class="service-card-title">Corporate workwear</h3>
+          <p class="service-card-body">Branded polos, fleeces, hoodies and jackets for your whole team. We source the garments at competitive prices and deliver finished and ready to wear.</p>
+          <span class="service-tag">From 5 items</span>
+        </div>
+        <div class="service-card fade-in" style="transition-delay:0.1s;">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="service-card-title">Schools & colleges</h3>
+          <p class="service-card-body">Staff polos, PE kits, leavers' hoodies, and sports day uniforms. We work with schools of all sizes and understand seasonal order demands.</p>
+          <span class="service-tag">Bulk pricing available</span>
+        </div>
+        <div class="service-card fade-in" style="transition-delay:0.15s;">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3 class="service-card-title">Sports clubs & teams</h3>
+          <p class="service-card-body">Training kits, playing tops, manager wear, and club merchandise. Any sport, any size, any quantity — from grassroots to semi-professional.</p>
+          <span class="service-tag">Any sport, any size</span>
+        </div>
+        <div class="service-card fade-in" style="transition-delay:0.2s;">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+          </div>
+          <h3 class="service-card-title">Personalised & gifts</h3>
+          <p class="service-card-body">Wedding party apparel, hen and stag do items, baby grows, personalised gifts and bespoke items. Perfect for memorable occasions.</p>
+          <span class="service-tag">Single items welcome</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HOW IT WORKS ─────────────────────────────────────────── -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="process-header fade-in">
+        <p class="section-eyebrow">How it works</p>
+        <h2 class="section-title">Simple from start to stitch</h2>
+        <p class="section-sub">Four straightforward steps from enquiry to delivery. No jargon, no hidden complexity.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step fade-in">
+          <div class="process-step-num">1</div>
+          <h3>Get a quote</h3>
+          <p>Tell us what you need — garment type, your logo, and how many. We'll come back within 24 hours.</p>
+        </div>
+        <div class="process-step fade-in" style="transition-delay:0.1s;">
+          <div class="process-step-num">2</div>
+          <h3>Approve design</h3>
+          <p>We digitise your logo and send a digital proof for your approval before anything is stitched.</p>
+        </div>
+        <div class="process-step fade-in" style="transition-delay:0.2s;">
+          <div class="process-step-num">3</div>
+          <h3>We produce</h3>
+          <p>Garments are sourced and embroidery is completed to a high standard by our experienced team.</p>
+        </div>
+        <div class="process-step fade-in" style="transition-delay:0.3s;">
+          <div class="process-step-num">4</div>
+          <h3>Delivered to you</h3>
+          <p>Packed and shipped directly to your door — or available for local collection in Leicestershire.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PRICING ──────────────────────────────────────────────── -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="pricing-header fade-in">
+        <p class="section-eyebrow">Transparent pricing</p>
+        <h2 class="section-title">No hidden costs.<br>No setup fees.</h2>
+        <p class="section-sub">Embroidery priced clearly per position. Garments quoted separately at competitive trade prices — always better value than buying retail and going elsewhere for embroidery.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card fade-in">
+          <p class="pricing-category">Small logo</p>
+          <p class="pricing-amount">£3 <small>per item</small></p>
+          <p class="pricing-desc">Breast pocket or beanie size. Up to approx. 5,000 stitches.</p>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li>Left or right chest</li>
+            <li>Cap or beanie front</li>
+            <li>Sleeve badge or tab</li>
+            <li>Small motifs and initials</li>
+          </ul>
+        </div>
+        <div class="pricing-card popular fade-in" style="transition-delay:0.1s;">
+          <span class="popular-badge">Most popular</span>
+          <p class="pricing-category">Full chest</p>
+          <p class="pricing-amount">£6 <small>per item</small></p>
+          <p class="pricing-desc">Large front or back panel. Maximum brand impact per garment.</p>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li>Full chest logo</li>
+            <li>Back panel design</li>
+            <li>Large motifs and crests</li>
+            <li>Complex multi-colour designs</li>
+          </ul>
+        </div>
+        <div class="pricing-card fade-in" style="transition-delay:0.2s;">
+          <p class="pricing-category">Bulk orders</p>
+          <p class="pricing-amount" style="font-size:28px; line-height:1.2; padding-top:6px;">Price on<br>application</p>
+          <p class="pricing-desc">Schools, teams and corporate clients — volume pricing available.</p>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li>Volume discounts</li>
+            <li>Dedicated account management</li>
+            <li>Repeat order pricing</li>
+            <li>Invoicing available</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pricing-note fade-in">
+        <span class="pricing-note-icon">💡</span>
+        <p><strong>Garment pricing is always quoted separately</strong> — we source from trade suppliers so you get better prices than retail. A typical branded polo shirt + left chest embroidery is often all-in under £15–£20 depending on garment choice and quantity. Ask us for a full itemised quote.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GALLERY ───────────────────────────────────────────────── -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="gallery-header fade-in">
+        <p class="section-eyebrow">Our work</p>
+        <h2 class="section-title">Quality you can see.</h2>
+        <p class="section-sub">Every stitch matters. Here's a sample of recent orders — from sports clubs to corporate workwear.</p>
+      </div>
+      <div class="gallery-grid">
+        <!-- ── GALLERY PHOTOS ───────────────────────────────────────
+             To add a real photo, replace the .gallery-placeholder div with:
+             <img src="images/your-photo.jpg" alt="Your description" style="width:100%;height:100%;object-fit:cover;">
+             Keep the .gallery-overlay div as-is so the hover effect still works.
+             Photo filenames should be lowercase with hyphens: polo-shirt.jpg not Polo Shirt.jpg
+             ──────────────────────────────────────────────────────── -->
+        <div class="gallery-item tall fade-in">
+          <div class="gallery-placeholder">
+            <div class="gallery-placeholder-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <p>Polo shirt example</p>
+            <small>images/gallery-polo-tall.jpg</small>
+          </div>
+          <div class="gallery-overlay"><span>Branded polo shirts</span></div>
+        </div>
+        <div class="gallery-item fade-in" style="transition-delay:0.1s;">
+          <div class="gallery-placeholder">
+            <div class="gallery-placeholder-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <p>Hoodie example</p>
+            <small>images/gallery-hoodie.jpg</small>
+          </div>
+          <div class="gallery-overlay"><span>Leavers hoodies</span></div>
+        </div>
+        <div class="gallery-item fade-in" style="transition-delay:0.15s;">
+          <div class="gallery-placeholder">
+            <div class="gallery-placeholder-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <p>Workwear example</p>
+            <small>images/gallery-workwear.jpg</small>
+          </div>
+          <div class="gallery-overlay"><span>Corporate workwear</span></div>
+        </div>
+        <div class="gallery-item fade-in" style="transition-delay:0.2s;">
+          <div class="gallery-placeholder">
+            <div class="gallery-placeholder-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <p>Sports kit example</p>
+            <small>images/gallery-sports.jpg</small>
+          </div>
+          <div class="gallery-overlay"><span>Sports club kits</span></div>
+        </div>
+        <div class="gallery-item fade-in" style="transition-delay:0.25s;">
+          <div class="gallery-placeholder">
+            <div class="gallery-placeholder-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+            <p>Cap or beanie example</p>
+            <small>images/gallery-cap.jpg</small>
+          </div>
+          <div class="gallery-overlay"><span>Caps and beanies</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTORS ──────────────────────────────────────────────── -->
+  <section class="sectors" id="sectors">
+    <div class="container">
+      <div class="sectors-header fade-in">
+        <p class="section-eyebrow">Who we work with</p>
+        <h2 class="section-title">Trusted across industries</h2>
+      </div>
+      <div class="sectors-grid">
+        <div class="sector-card fade-in">
+          <div class="sector-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+          <div class="sector-text"><h4>Schools & colleges</h4><p>Uniforms, PE kits, leavers' wear</p></div>
+        </div>
+        <div class="sector-card fade-in" style="transition-delay:0.05s;">
+          <div class="sector-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+          <div class="sector-text"><h4>Small businesses</h4><p>Workwear, uniforms, branded clothing</p></div>
+        </div>
+        <div class="sector-card fade-in" style="transition-delay:0.1s;">
+          <div class="sector-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+          <div class="sector-text"><h4>Sports clubs</h4><p>Kits, training wear, club merchandise</p></div>
+        </div>
+        <div class="sector-card fade-in" style="transition-delay:0.15s;">
+          <div class="sector-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="sector-text"><h4>Care homes</h4><p>Staff uniforms and identification wear</p></div>
+        </div>
+        <div class="sector-card fade-in" style="transition-delay:0.2s;">
+          <div class="sector-icon"><svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></div>
+          <div class="sector-text"><h4>Hospitality & pubs</h4><p>Front-of-house and kitchen wear</p></div>
+        </div>
+        <div class="sector-card fade-in" style="transition-delay:0.25s;">
+          <div class="sector-icon"><svg viewBox="0 0 24 24"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/></svg></div>
+          <div class="sector-text"><h4>Gifts & occasions</h4><p>Bridal, hen dos, personalised gifts</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── QUOTE FORM ───────────────────────────────────────────── -->
+  <section class="quote-section" id="quote">
+    <div class="container">
+      <div class="quote-inner">
+        <div class="fade-in">
+          <p class="section-eyebrow">Get in touch</p>
+          <h2 class="section-title">Let's get your brand looking sharp</h2>
+          <p class="section-sub">Tell us what you need and we'll come back with a no-obligation quote — usually within 24 hours, Monday to Friday.</p>
+          <div class="quote-detail">
+            <div class="quote-detail-item">
+              <div class="quote-detail-dot"></div>
+              <p><strong>We supply the garments</strong> — no need to source separately. Just tell us what you want and we'll quote the full package.</p>
+            </div>
+            <div class="quote-detail-item">
+              <div class="quote-detail-dot"></div>
+              <p><strong>Your logo digitised free</strong> on first orders — we send a digital proof before anything is stitched.</p>
+            </div>
+            <div class="quote-detail-item">
+              <div class="quote-detail-dot"></div>
+              <p><strong>No minimum order</strong> on personalised items. Bulk discounts available for 25+ items.</p>
+            </div>
+          </div>
+          <p style="font-size:14px;color:var(--muted);">Or email us directly: <a href="mailto:info@eatonembroidery.com" style="color:var(--green-400);font-weight:500;">info@eatonembroidery.com</a></p>
+        </div>
+
+        <div class="form-card fade-in" style="transition-delay:0.15s;">
+          <p class="form-title">Request a free quote</p>
+
+          <!-- ── TALLY FORM EMBED ─────────────────────────────────
+               Once you've set up your Tally form:
+               1. Go to tally.so and create your form
+               2. Click Share > Embed > copy the iframe code
+               3. DELETE the form below this comment block
+               4. PASTE your Tally iframe code here instead
+               The Tally form will send enquiries directly to your email.
+
+               Example Tally embed looks like this:
+               <iframe data-tally-src="https://tally.so/embed/YOURCODE"
+                 loading="lazy" width="100%" height="500"
+                 frameborder="0" marginheight="0" marginwidth="0"
+                 title="Quote Request"></iframe>
+               <script async src="https://tally.so/widgets/embed.js"></script>
+               ────────────────────────────────────────────────────── -->
+
+          <div id="quote-form">
+            <div class="form-row">
+              <div class="form-field">
+                <label class="form-label">Full name <span class="req">*</span></label>
+                <input type="text" id="f-name" placeholder="Your name" autocomplete="name">
+              </div>
+              <div class="form-field">
+                <label class="form-label">Business / organisation</label>
+                <input type="text" id="f-org" placeholder="Company or club name">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label class="form-label">Email address <span class="req">*</span></label>
+                <input type="email" id="f-email" placeholder="you@example.com" autocomplete="email">
+              </div>
+              <div class="form-field">
+                <label class="form-label">Phone number</label>
+                <input type="tel" id="f-phone" placeholder="07700 000000" autocomplete="tel">
+              </div>
+            </div>
+            <div class="form-row full">
+              <div class="form-field">
+                <label class="form-label">What do you need? <span class="req">*</span></label>
+                <select id="f-type">
+                  <option value="">Select the best description...</option>
+                  <option>Corporate / business workwear</option>
+                  <option>School or college uniforms</option>
+                  <option>Sports club kits</option>
+                  <option>Care home staff wear</option>
+                  <option>Pub / hospitality uniforms</option>
+                  <option>Personalised gift or occasion</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label class="form-label">Approximate quantity</label>
+                <select id="f-qty">
+                  <option value="">Select...</option>
+                  <option>1–4 items</option>
+                  <option>5–9 items</option>
+                  <option>10–24 items</option>
+                  <option>25–49 items</option>
+                  <option>50+ items</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label class="form-label">Do you need garments supplied?</label>
+                <select id="f-supply">
+                  <option value="">Select...</option>
+                  <option>Yes — please supply garments</option>
+                  <option>No — I'll supply my own</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row full">
+              <div class="form-field">
+                <label class="form-label">Tell us more about your requirements</label>
+                <textarea id="f-notes" placeholder="Garment type, colours, logo description, deadline, any specific requirements..."></textarea>
+              </div>
+            </div>
+            <div class="form-consent">
+              <input type="checkbox" id="f-consent">
+              <label for="f-consent">I agree to Eaton Embroidery using my details to respond to this enquiry. We will never share your data with third parties or send unsolicited marketing. <a href="#" style="color:var(--green-400);">Privacy policy</a></label>
+            </div>
+            <button class="btn-primary" style="width:100%;justify-content:center;text-align:center;" onclick="submitQuote()">Send quote request →</button>
+            <p class="form-submit-note">We aim to respond within 24 hours, Monday to Friday.</p>
+          </div>
+
+          <div id="form-success" style="display:none;text-align:center;padding:32px 0;">
+            <div style="width:52px;height:52px;border-radius:50%;background:var(--green-400);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 style="font-size:18px;font-weight:500;margin-bottom:8px;">Quote request sent!</h3>
+            <p style="font-size:14px;color:var(--muted);line-height:1.7;">Thanks — we'll review your requirements and respond within 24 hours with a full quote. Keep an eye on your inbox.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="nav-logo">Eaton <span>Embroidery</span></div>
+          <p>Professional embroidered workwear and personalised garments for businesses, schools and clubs. We supply the garments and the embroidery — complete package, one supplier.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Corporate workwear</a></li>
+            <li><a href="#services">School uniforms</a></li>
+            <li><a href="#services">Sports clubs</a></li>
+            <li><a href="#services">Personalised gifts</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#quote">Get a quote</a></li>
+            <li><a href="mailto:info@eatonembroidery.com">info@eatonembroidery.com</a></li>
+            <li><a href="#gallery">View our work</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Eaton Embroidery. All rights reserved. Leicestershire, UK.</p>
+        <p>Registered in England &amp; Wales</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── JAVASCRIPT ───────────────────────────────────────────── -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    }
+
+    function submitQuote() {
+      const name = document.getElementById('f-name').value.trim();
+      const email = document.getElementById('f-email').value.trim();
+      const type = document.getElementById('f-type').value;
+      const consent = document.getElementById('f-consent').checked;
+      if (!name) { alert('Please enter your name.'); return; }
+      if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+      if (!type) { alert('Please tell us what you need.'); return; }
+      if (!consent) { alert('Please tick the consent box to continue.'); return; }
+      document.getElementById('quote-form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+      /* ── CONNECT TO YOUR EMAIL SERVICE ─────────────────────────
+         Options:
+         A) Replace this whole form with a Tally.so embed (recommended — easiest)
+         B) Use Formspree: change the button to a real <form> submit to formspree.io
+         C) Use EmailJS to send directly from the browser — emailjs.com (free tier)
+         ─────────────────────────────────────────────────────────── */
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
