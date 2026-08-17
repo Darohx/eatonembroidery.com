@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ═══ TITLE TAG ═══════════════════════════════════════════════════════ -->
-  <title>BEST Embroidered Workwear & Teamwear Derby, Nottingham & East midlands near me. Embroidered Workwear, Schoolwear, Teamwear &amp; Personalisation</title>
+  <title>BEST Embroidery Derby, Nottingham, Leicester | Eaton Embroidery | Embroidered Workwear, Schoolwear, Teamwear &amp; Personalisation Near Me</title>
 
   <!-- ═══ META DESCRIPTION ════════════════════════════════════════════════ -->
   <meta name="description" content="Eaton Embroidery — Chellaston's leading embroidery supplier. Professional embroidered workwear, schoolwear, sports teamwear and personalised garments delivered across Derby, Nottingham and Leicester. We supply the garments and the embroidery — one quote, one supplier.">
@@ -297,6 +297,19 @@
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
     .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.3); }
 
+
+    /* ─── SOCIAL ICONS ─────────────────────────────────────────────────── */
+    .social-icons { display: flex; gap: 10px; align-items: center; }
+    .social-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(255,255,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.15s;
+      flex-shrink: 0;
+    }
+    .social-icon:hover { background: rgba(255,255,255,0.25); transform: translateY(-2px); }
+    .social-icon svg { width: 18px; height: 18px; fill: #fff; }
+
     /* ─── RESPONSIVE ───────────────────────────────────────────────────── */
     @media (max-width: 900px) {
       .hero-inner, .service-inner, .quote-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -373,9 +386,19 @@
       </div>
       <div class="fade-in" style="transition-delay:0.15s;">
         <div class="hero-image-box">
-      <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;">
-  <source src="images/hero-video.mp4" type="video/mp4">
-</video>
+          <!-- REPLACE WITH HERO PHOTO:
+               Delete the .hero-placeholder div and replace with:
+               <img src="images/hero-workwear.jpg" alt="Embroidered workwear Chellaston Derby" class="hero-img"> -->
+          <div class="hero-placeholder">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin:0 auto 12px">
+              <rect width="64" height="64" rx="10" fill="#b8d4c2"/>
+              <path d="M14 26Q14 20 20 20L26 20Q28 16 32 16Q36 16 38 20L44 20Q50 20 50 26L50 50Q50 53 47 53L17 53Q14 53 14 50Z" fill="#1a4d2e"/>
+              <path d="M24 34Q28 31 32 32Q36 33 40 31" stroke="#e8f2ec" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path d="M26 40Q29 38 32 39Q35 40 38 38" stroke="#e8f2ec" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+            <p>Your photo goes here</p>
+            <small>images/hero-workwear.jpg</small>
+          </div>
         </div>
       </div>
     </div>
@@ -414,7 +437,7 @@
       <a href="#workwear" class="service-nav-card fade-in">
         <div class="snc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
         <h3>Workwear</h3>
-        <p>Branded polos, sweatshirts, jackets and more for businesses across Derby &amp; Nottingham</p>
+        <p>Branded polos, fleeces and jackets for businesses across Derby &amp; Nottingham</p>
         <span class="snc-link">View service →</span>
       </a>
       <a href="#schoolwear" class="service-nav-card fade-in" style="transition-delay:0.08s">
@@ -445,24 +468,27 @@
     <div class="service-inner">
       <div class="service-content fade-in">
         <p class="eyebrow">Embroidered Workwear</p>
-        <h2 class="section-title">Branded workwear for businesses</h2>
+        <h2 class="section-title">Branded workwear for Derby &amp; Nottingham businesses</h2>
         <p class="section-sub">Get your team looking sharp with professionally embroidered workwear. We source the garments at trade prices and deliver finished, ready to wear.</p>
         <div class="service-bullets">
-          <div class="service-bullet">Polo shirts, fleeces, hoodies, softshells and more — all sourced and embroidered</div>
-          <div class="service-bullet">No minimum order — ideal for small local businesses</div>
+          <div class="service-bullet">Polo shirts, fleeces, hoodies, softshells and hi-vis — all sourced and embroidered</div>
+          <div class="service-bullet">Minimum order from just 5 items — ideal for small local businesses</div>
           <div class="service-bullet">Your logo digitised and proofed before anything is stitched</div>
           <div class="service-bullet">Volume discounts for 25+ items — perfect for larger teams</div>
           <div class="service-bullet">Repeat orders remembered — reorder in seconds</div>
         </div>
         <a href="#quote" class="btn btn-primary">Get a workwear quote</a>
         <div class="service-towns">
-          <span class="town-tag">Derby</span><span class="town-tag">Nottingham</span><span class="town-tag">Leicester</span>
-          <span class="town-tag">East Midlands</span><span class="town-tag">West Midlands</span><span class="town-tag">UK</span>
+          <span class="town-tag">Derby</span><span class="town-tag">Chellaston</span><span class="town-tag">Nottingham</span>
+          <span class="town-tag">Ilkeston</span><span class="town-tag">Heanor</span><span class="town-tag">Ripley</span>
         </div>
       </div>
       <div class="service-image fade-in" style="transition-delay:0.15s">
         <!-- REPLACE: <img src="images/workwear-polo.jpg" alt="Embroidered workwear Derby" style="width:100%;height:100%;object-fit:cover;"> -->
-      <img src="images/workwear-polo.jpg" alt="Embroidered workwear Derby" style="width:100%;height:100%;object-fit:cover;">
+        <div class="service-img-placeholder">
+          <p>Workwear photo</p>
+          <small>images/workwear-polo.jpg</small>
+        </div>
       </div>
     </div>
   </div>
@@ -474,7 +500,7 @@
     <div class="service-inner reverse">
       <div class="service-content fade-in">
         <p class="eyebrow">Embroidered Schoolwear</p>
-        <h2 class="section-title">School uniform embroidery</h2>
+        <h2 class="section-title">School uniform embroidery across Derbyshire &amp; Nottinghamshire</h2>
         <p class="section-sub">From staff polo shirts to leavers' hoodies — we supply the garments and the embroidery, making ordering simple for schools of all sizes.</p>
         <div class="service-bullets">
           <div class="service-bullet">Staff polo shirts and sweatshirts with school logo</div>
@@ -485,13 +511,16 @@
         </div>
         <a href="#quote" class="btn btn-primary">Get a schoolwear quote</a>
         <div class="service-towns">
-          <span class="town-tag">Derby</span><span class="town-tag">Nottingham</span><span class="town-tag">Leicester</span>
-          <span class="town-tag">East Midlands</span><span class="town-tag">West Midlands</span><span class="town-tag">UK</span>
+          <span class="town-tag">Derby</span><span class="town-tag">Nottingham</span><span class="town-tag">Beeston</span>
+          <span class="town-tag">Stapleford</span><span class="town-tag">Sandiacre</span><span class="town-tag">Borrowash</span>
         </div>
       </div>
       <div class="service-image fade-in" style="transition-delay:0.15s">
         <!-- REPLACE: <img src="images/schoolwear.jpg" alt="Embroidered schoolwear Derbyshire" style="width:100%;height:100%;object-fit:cover;"> -->
-    <img src="images/schoolwear.jpg" alt="Embroidered schoolwear Derbyshire" style="width:100%;height:100%;object-fit:cover;">
+        <div class="service-img-placeholder">
+          <p>Schoolwear photo</p>
+          <small>images/schoolwear.jpg</small>
+        </div>
       </div>
     </div>
   </div>
@@ -503,7 +532,7 @@
     <div class="service-inner">
       <div class="service-content fade-in">
         <p class="eyebrow">Sports &amp; Teamwear</p>
-        <h2 class="section-title">Embroidered sports &amp; teamwear for clubs</h2>
+        <h2 class="section-title">Embroidered sports &amp; teamwear for clubs across the East Midlands</h2>
         <p class="section-sub">Kit your whole squad out properly. Training wear, matchday kit, manager gear and club merchandise — all embroidered with your crest or badge.</p>
         <div class="service-bullets">
           <div class="service-bullet">Training tops, playing shirts and warm-up jackets</div>
@@ -514,13 +543,16 @@
         </div>
         <a href="#quote" class="btn btn-primary">Get a teamwear quote</a>
         <div class="service-towns">
-          <span class="town-tag">Derby</span><span class="town-tag">Nottingham</span><span class="town-tag">Leicester</span>
-          <span class="town-tag">East Midlands</span><span class="town-tag">West Midlands</span><span class="town-tag">UK</span>
+          <span class="town-tag">Chellaston</span><span class="town-tag">Castle Donington</span><span class="town-tag">Shepshed</span>
+          <span class="town-tag">Loughborough</span><span class="town-tag">Hucknall</span><span class="town-tag">Arnold</span>
         </div>
       </div>
       <div class="service-image fade-in" style="transition-delay:0.15s">
         <!-- REPLACE: <img src="images/teamwear.jpg" alt="Embroidered teamwear East Midlands" style="width:100%;height:100%;object-fit:cover;"> -->
-        <img src="images/teamwear.jpg" alt="Embroidered teamwear East Midlands" style="width:100%;height:100%;object-fit:cover;">
+        <div class="service-img-placeholder">
+          <p>Teamwear photo</p>
+          <small>images/teamwear.jpg</small>
+        </div>
       </div>
     </div>
   </div>
@@ -545,7 +577,10 @@
       </div>
       <div class="service-image fade-in" style="transition-delay:0.15s">
         <!-- REPLACE: <img src="images/personalisation.jpg" alt="Personalised embroidery gifts" style="width:100%;height:100%;object-fit:cover;"> -->
-        <img src="images/personalisation.jpg" alt="Personalised embroidery gifts" style="width:100%;height:100%;object-fit:cover;">
+        <div class="service-img-placeholder">
+          <p>Personalisation photo</p>
+          <small>images/personalisation.jpg</small>
+        </div>
       </div>
     </div>
   </div>
@@ -862,7 +897,19 @@
         <a href="tel:07944915880" style="color:rgba(255,255,255,0.5);transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">07944 915880</a>
       </address>
     </div>
-    <div class="footer-bottom">
+    <!-- Social icons -->
+    <div style="padding: 24px 0 20px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 14px;">
+      <span style="font-size:12px;color:rgba(255,255,255,0.35);font-weight:500;letter-spacing:1px;text-transform:uppercase;">Follow us</span>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=61591058566628" target="_blank" rel="noopener noreferrer" aria-label="Eaton Embroidery on Facebook" class="social-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/eaton.embroidery/" target="_blank" rel="noopener noreferrer" aria-label="Eaton Embroidery on Instagram" class="social-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+      </div>
+    </div>
+        <div class="footer-bottom">
       <p>&copy; 2025 Eaton Embroidery. All rights reserved.</p>
       <p>Embroidered workwear, schoolwear, teamwear &amp; personalisation — Derby, Nottingham, Leicester</p>
     </div>
@@ -878,12 +925,14 @@
   document.querySelectorAll('.fade-in').forEach(function(el) { obs.observe(el); });
 
   function generateQuoteRef() {
-    var year = new Date().getFullYear();
-    var key = 'ee_q_' + year;
-    var n = parseInt(localStorage.getItem(key) || '0') + 1;
-    localStorage.setItem(key, n);
-    var pad = n < 10 ? '000' + n : n < 100 ? '00' + n : n < 1000 ? '0' + n : '' + n;
-    return 'EE-' + year + '-' + pad;
+    var now = new Date();
+    var y  = now.getFullYear();
+    var mo = String(now.getMonth() + 1).padStart(2, '0');
+    var d  = String(now.getDate()).padStart(2, '0');
+    var h  = String(now.getHours()).padStart(2, '0');
+    var mi = String(now.getMinutes()).padStart(2, '0');
+    var s  = String(now.getSeconds()).padStart(2, '0');
+    return 'EE-' + y + mo + d + '-' + h + mi + s;
   }
 
   var currentRef = generateQuoteRef();
